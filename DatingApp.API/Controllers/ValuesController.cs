@@ -12,7 +12,6 @@ namespace DatingApp.API.Controllers
     [Route("api/[controller]")]
     public class ValuesController : ControllerBase
     {
-        private readonly DataContext _context;
         public ValuesController(DataContext context, ILogger<ValuesController> logger)
         {
             _context = context;
@@ -43,7 +42,6 @@ namespace DatingApp.API.Controllers
 
         }
 
-
         [HttpPut("id")]
         public void Put(int id, [FromBody] string value)
         {
@@ -56,7 +54,7 @@ namespace DatingApp.API.Controllers
 
         }
 
-
+        private readonly DataContext _context;
         private readonly ILogger<ValuesController> _logger;
     }
 }
